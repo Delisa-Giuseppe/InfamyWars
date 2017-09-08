@@ -1,0 +1,516 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esHUDControls</name>
+    <events>
+        <event-block sid="179042452206899">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="791077793491844" type="Player" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="133213272173460">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="147771094079245" type="HUD_LifePointImage">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Player.Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="409260681088267" type="HUD_LifePointImage">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="217436973827455">
+            <conditions>
+                <condition id="-11" name="For Each" sid="581607362506986" type="System">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="946883408208849">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="832951737337415" type="System">
+                            <param id="0" name="Object">HUD_LifePointImage</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="882482518427636">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="441371150237574" type="HUD_LifePointImage">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="949717789787764">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="291490725963621" type="Player">
+                                            <param id="0" name="Instance variable">Life</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="792462768410118" type="HUD_LifePointImage">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="238877069927594">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="153847815826795" type="Player">
+                                            <param id="0" name="Instance variable">Life</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="428505972944699" type="HUD_LifePointImage">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="731893678731752">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="859733221587151" type="Player">
+                                            <param id="0" name="Instance variable">Coins</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="669991538602881" type="Player">
+                                            <param id="0" name="Instance variable">Life</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action disabled="1" id="-9" name="Destroy" sid="639216382883082" type="HUD_LifePointImage" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="822322311471480">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="817493830471207" type="System">
+                            <param id="0" name="Object">HUD_PlayerImage</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="288511906976904">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="176437496279376" type="HUD_PlayerImage">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="795003663356696" type="HUD_PlayerImage">
+                                    <param id="0" name="Frame number">Player.Player - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="534987792657447">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="243236264364000" type="System">
+                            <param id="0" name="Object">HUD_Money</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="407840617861049">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="565627591332433" type="HUD_Money">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="441963428727916" type="HUD_Money">
+                                    <param id="0" name="Text">Player.Money</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="261758448332388">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="713118969705350" type="System">
+                            <param id="0" name="Object">HUD_Score</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="710085074702479">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="981773561803018" type="HUD_Score">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="507694730396258" type="HUD_Score">
+                                    <param id="0" name="Text">Player.Score</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="329573259208048">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="297350204836076" type="System">
+                            <param id="0" name="Object">HUD_NormalAmmo</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="253958964354544">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="724440150551699" type="HUD_NormalAmmo">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="832078246385484" type="HUD_NormalAmmo">
+                                    <param id="0" name="Text">Player.NormalAmmo</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="950053064116388">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="737322048951068" type="Player">
+                                            <param id="0" name="Instance variable">NormalAmmo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="638178392301917" type="HUD_NormalAmmo">
+                                            <param id="0" name="Text">&quot;∞&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="639272312349777">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="723259631357145" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="524043128542127" type="HUD_NormalAmmo">
+                                            <param id="0" name="Text">Player.NormalAmmo</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="132320785185881">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="638248888265995" type="System">
+                            <param id="0" name="Object">HUD_SpecialAmmo</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="438149272794661">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="660119054923150" type="HUD_SpecialAmmo">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="868999111792214" type="HUD_SpecialAmmo">
+                                    <param id="0" name="Text">Player.SpecialAmmo</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="507705708364282">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="639712883733502" type="System">
+                            <param id="0" name="Object">HUD_Coin</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="180147445215915">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="809476123677499" type="HUD_Coin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Player.Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="569584198214846" type="HUD_Coin">
+                                    <param id="0" name="Text">Player.Coins</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="169812003556195">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="757073081148575" type="Timer">
+                    <param id="0" name="Instance variable">CurrentTime</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="605728556528994" type="Timer">
+                    <param id="0" name="Instance variable">CurrentTime</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+                <action id="0" name="Set text" sid="131238060624585" type="Timer">
+                    <param id="0" name="Text">round(Timer.CurrentTime)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="167609128790352">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="909263258626681" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="616450055354523" type="HUD_LevelName">
+                    <param id="0" name="Text">LayoutName</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="997142553485471">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="331586040139272" type="System">
+                            <param id="0" name="Variable">PlayerCount</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="254118835697785">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="422597455417720" type="System">
+                                    <param id="0" name="Object">HUD_PlayerImage</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="415258489628954">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="104098617459333" type="HUD_PlayerImage">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="661221023012539" type="HUD_PlayerImage" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="318721978022205">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="106269564845581" type="System">
+                                    <param id="0" name="Object">HUD_Money</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="418091642167412">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="236338306734470" type="HUD_Money">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="858245504291939" type="HUD_Money" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="371757358475055">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="126757120150636" type="System">
+                                    <param id="0" name="Object">HUD_Score</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="542151649954869">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="393285620216447" type="HUD_Score">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="958240082317227" type="HUD_Score" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="117142806301631">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="515705010332939" type="System">
+                                    <param id="0" name="Object">HUD_Ammo</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="498077843597262">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="742601713578143" type="HUD_Ammo">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="312994419770438" type="HUD_Ammo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="474286942180956">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="683412267511727" type="System">
+                                    <param id="0" name="Object">HUD_Image</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="878893873157702">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="875623313797307" type="HUD_Image">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="678809291631243" type="HUD_Image" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="496744228824863">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="270028602151243" type="System">
+                                    <param id="0" name="Object">HUD_NormalAmmo</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="991240626057353">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="217205335493914" type="HUD_NormalAmmo">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="253546759366129" type="HUD_NormalAmmo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="277853231811381">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="657191617119152" type="System">
+                                    <param id="0" name="Object">HUD_SpecialAmmo</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="430707630890059">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="179243103570832" type="HUD_SpecialAmmo">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="457092713079464" type="HUD_SpecialAmmo" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="430506319576981">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="411239892896389" type="System">
+                                    <param id="0" name="Object">HUD_Coin</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="762185332997809">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="354944020766619" type="HUD_Coin">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="161271039643116" type="HUD_Coin" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="477039754515222">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="425215580530300" type="System">
+                                    <param id="0" name="Object">HUD_CoinLabel</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="229264142498555">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="224852459103509" type="HUD_CoinLabel">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="262104597617972" type="HUD_CoinLabel" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

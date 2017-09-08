@@ -1,0 +1,375 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esWinner</name>
+    <events>
+        <event-block sid="936512092936500">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="650271625036014" type="Money">
+                    <param id="0" name="Object">Solid_Path</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="2" name="Apply force at angle" sid="152330781835325" type="Money">
+                    <param id="0" name="Force">25</param>
+                    <param id="1" name="Angle">90</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="376667406385752">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="341640200646004" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="282440401428383" type="Money">
+                    <param id="0" name="Gravity">10</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="610691831721128">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="709498880801436" type="System">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="295990376823706">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="156870409318882" type="Player">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="377991552617602">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="622432926315493" type="System">
+                                            <param id="0" name="Count">PlayerOneMoney</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="952691483420978" type="System">
+                                            <param id="0" name="Object to create">Money</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">Player.X + round(random(-25,25))</param>
+                                            <param id="3" name="Y">Player.ImagePointY(0) + 32</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="429278325107399">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="627588240548038" type="PlayerScore">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="310939207068037" type="PlayerScore">
+                                            <param id="0" name="Text">&quot;SCORE : &quot;</param>
+                                        </action>
+                                        <action id="1" name="Append text" sid="565467038166227" type="PlayerScore">
+                                            <param id="0" name="Text">PlayerOneScore</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="756341521831284">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="933636490625528" type="Player">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="723695788356146" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="801331702079712">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="128867691292035" type="System">
+                                            <param id="0" name="Count">PlayerTwoMoney</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="839819611763843" type="System">
+                                            <param id="0" name="Object to create">Money</param>
+                                            <param id="1" name="Layer">&quot;Background&quot;</param>
+                                            <param id="2" name="X">Player.X + round(random(-25,25))</param>
+                                            <param id="3" name="Y">Player.ImagePointY(0) + 32</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="613615918139221">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="864378397903942" type="PlayerScore">
+                                            <param id="0" name="Instance variable">Player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="737016729331639" type="PlayerScore">
+                                            <param id="0" name="Text">&quot;SCORE : &quot;</param>
+                                        </action>
+                                        <action id="1" name="Append text" sid="797090870846144" type="PlayerScore">
+                                            <param id="0" name="Text">PlayerTwoScore</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="193332678329271">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="569482558016848" type="Money">
+                    <param id="0" name="Tag">&quot;DestroyMoney&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Fade" id="1" name="Start fade" sid="503186229494740" type="Money" />
+            </actions>
+        </event-block>
+        <event-block sid="875955991579063">
+            <conditions>
+                <condition id="-18" name="On created" sid="937508385871406" type="Money" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Start timer" sid="245293654661253" type="Money">
+                    <param id="0" name="Duration">3</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;DestroyMoney&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="766384229800982">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="434528034349346" type="System">
+                    <param id="0" name="First value">Money.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="424207837181568" type="PlayerScore">
+                    <param id="0" name="Text">&quot;SCORE : &quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="293667236444323">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="601111617349586" type="PlayerScore">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="805286379133751" type="PlayerScore">
+                            <param id="0" name="Text">PlayerOneScore + PlayerOneMoney</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="380518119895223">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="116746188493977" type="PlayerScore">
+                            <param id="0" name="Instance variable">Player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="529190126498278" type="PlayerScore">
+                            <param id="0" name="Text">PlayerTwoScore + PlayerTwoMoney</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="976327333151486">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="762274685979285" type="System">
+                            <param id="0" name="First value">PlayerOneScore + PlayerOneMoney</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">PlayerTwoScore + PlayerTwoMoney</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="446044303372083" type="PlayerWin">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="350442488366297">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="278558806699709" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="720019120144770" type="PlayerWin">
+                                    <param id="0" name="Text">&quot;PLAYER ONE LOSE&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="772453011177492">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="848769146113202" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="356585875374328" type="PlayerWin">
+                                    <param id="0" name="Text">&quot;PLAYER TWO WIN&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="770912289484135">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="817412781802010" type="System">
+                            <param id="0" name="First value">PlayerOneScore + PlayerOneMoney</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">PlayerTwoScore + PlayerTwoMoney</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="303933722066666" type="PlayerWin">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="398194306463650">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="665541892350123" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="744019603389486" type="PlayerWin">
+                                    <param id="0" name="Text">&quot;PLAYER ONE WIN&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="877242456617178">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="411981054958537" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="552577110769767" type="PlayerWin">
+                                    <param id="0" name="Text">&quot;PLAYER TWO LOSE&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="505098718914946">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="807921234062591" type="System">
+                            <param id="0" name="First value">PlayerOneScore + PlayerOneMoney</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">PlayerTwoScore + PlayerTwoMoney</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="359682062580040" type="PlayerWin">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="508965973428106">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="518072487173205" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="347814916005353" type="PlayerWin">
+                                    <param id="0" name="Text">&quot;DRAW&quot;</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="142551681673080" type="PlayerWin">
+                                    <param id="0" name="X">260</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="781423276517589">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="299103892929529" type="PlayerWin">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="501815125353721" type="PlayerWin" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="296856846020928">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="913612489860126" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+                <condition id="6" name="On button pressed" sid="202834747433271" type="Gamepad">
+                    <param id="0" name="Gamepad">1</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="320836220059045" type="System">
+                    <param id="0" name="Layout">TitleScreen</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="154598422675096">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="466382395517916" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="232002389976773" type="System">
+                    <param id="0" name="Variable">PlayerOneMoney</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="244776611867308" type="System">
+                    <param id="0" name="Variable">PlayerOneScore</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="184199964311244" type="System">
+                    <param id="0" name="Variable">PlayerTwoMoney</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="550230127888887" type="System">
+                    <param id="0" name="Variable">PlayerTwoScore</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="33" name="Stop all" sid="998697602899730" type="Audio" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

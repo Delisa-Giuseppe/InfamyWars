@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esCheck</name>
+    <events>
+        <event-block sid="707815178324632">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="549360924094230" type="System">
+                    <param id="0" name="Variable">randomEnemyShootingGalaga</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="957446653599395" type="System">
+                    <param id="0" name="Variable">randomEnemyShootingGalaga</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

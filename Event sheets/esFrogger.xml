@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esFrogger</name>
+    <events>
+        <variable constant="0" name="StartMiniGame" sid="443939926724888" static="0" type="number">0</variable>
+        <include>esFunctions</include>
+        <include>esFroggerControllers</include>
+        <event-block sid="123619981258402">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="899345584953429" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="659766766379153" type="System">
+                    <param id="0" name="Width">CONST_WINDOW_SIZE_FROGGER</param>
+                    <param id="1" name="Height">CONST_WINDOW_SIZE_FROGGER</param>
+                </action>
+                <action id="-9" name="Set value" sid="927864363468905" type="System">
+                    <param id="0" name="Variable">StartMiniGame</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="932078829829019" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Call function" sid="455319869982153" type="Function">
+                    <param id="0" name="Name">&quot;FroggerMovingObjects&quot;</param>
+                    <param id="1" name="Parameter {n}">-carSpeedFrogger{###}carSpeedFrogger{###}-carSpeedFrogger{###}carSpeedFrogger * 2{###}-carSpeedFrogger+ 20{###}trunkSpeedFrogger{###}trunkSpeedFrogger / 2{###}trunkSpeedFrogger / 1.5{###}lotusSpeedFrogger{###}lotusSpeedFrogger / 1.5</param>
+                </action>
+                <action id="-9" name="Set value" sid="520054552423845" type="System">
+                    <param id="0" name="Variable">lotusUnderWaterTimerFrogger</param>
+                    <param id="1" name="Value">lotusWait</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="322850212585683" type="Player">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="912189346397442" type="Player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="420469010511682" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="689774582081367" type="System">
+                    <param id="0" name="Layout">Level1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="913078588236450">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="627263736212207" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="763308244254810" type="Function">
+                    <param id="0" name="Name">&quot;EndZoneFrogger&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Call function" sid="339502573599164" type="Function">
+                    <param id="0" name="Name">&quot;FroggerSpeed&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-10" name="Add to" sid="550465386334872" type="System">
+                    <param id="0" name="Variable">lotusUnderWaterTimerFrogger</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="591633141204998">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="542296232934842" type="System">
+                            <param id="0" name="Variable">StartMiniGame</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="262175907176218" type="System">
+                            <param id="0" name="Variable">StartMiniGame</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="809833069715361">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="137367697469381" type="System">
+                    <param id="0" name="Variable">StartMiniGame</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">5.0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="544375895507065">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="976140934634761" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="333617380212871" type="System">
+                            <param id="0" name="Variable">miniGameRunning</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="691328629932778">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="879811084297322" type="System">
+                    <param id="0" name="First value">FroggerPlayer.Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="968344659235087" type="GameOver">
+                    <param id="0" name="Text">&quot;Draw&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="463115586701321" type="GameOver">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="986170806084756">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="299606178669295" type="System">
+                    <param id="0" name="Variable">lotusUnderWaterTimerFrogger</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">lotusWait</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="188530741275054" type="Function">
+                    <param id="0" name="Name">&quot;LotusUnderwater&quot;</param>
+                    <param id="1" name="Parameter {n}">lotusWait</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="236589165674367">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="550663597745416" type="FroggerPlayer">
+                    <param id="0" name="Object">FroggerCars</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="381617415157544" type="FroggerPlayer" />
+            </actions>
+        </event-block>
+        <event-block sid="951285329227236">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="220395089213540" type="FroggerPlayer">
+                    <param id="0" name="Object">FroggerLotus</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="385283330471362" type="FroggerPlayer">
+                    <param id="0" name="Object">FroggerTrunk</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="888338631647986" type="FroggerPlayer">
+                    <param id="0" name="Speed">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="367581634822856" type="FroggerPlayer">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="620837078106240">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="993542823218497" type="FroggerPlayer">
+                            <param id="0" name="Object">FroggerDeadZone</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="937542304427394" type="FroggerPlayer" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="116788056108542">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="896415753125056" type="FroggerPlayer" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="417856382838011" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="895293675208673">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="262438865078055" type="FroggerPlayer">
+                            <param id="0" name="Instance variable">player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="304508880612266" type="GameOver">
+                            <param id="0" name="Text">&quot;Player 2 is the winner&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="579305492959169" type="GameOver">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="671151530181613">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="437132718882428" type="FroggerPlayer">
+                            <param id="0" name="Instance variable">player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="689966567950630" type="GameOver">
+                            <param id="0" name="Text">&quot;Player 1 is the winner&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="505807715196297" type="GameOver">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="539166258079520">
+            <conditions>
+                <condition id="2" name="Is playing" sid="734541126962960" type="FroggerLotus">
+                    <param id="0" name="Animation">&quot;GoUpWater&quot;</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="731990265281609" type="FroggerLotus">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Number">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="183750530802847" type="FroggerLotus">
+                    <param id="0" name="Animation">&quot;Movement&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="997666633055220">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="339764015300562" type="System" />
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="710190763044846" type="Player">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="670962611767125" type="Player">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="820898155963486">
+            <conditions>
+                <condition id="2" name="Is playing" sid="240476462240207" type="FroggerLotus">
+                    <param id="0" name="Animation">&quot;UnderWater&quot;</param>
+                </condition>
+                <condition id="3" name="Compare frame" sid="591735391341540" type="FroggerLotus">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Number">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="163146812105994" type="FroggerLotus">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

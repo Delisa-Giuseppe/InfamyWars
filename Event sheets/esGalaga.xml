@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esGalaga</name>
+    <events>
+        <include>esCheck</include>
+        <include>esGalagaControllers</include>
+        <include>esFunctions</include>
+        <event-block sid="979123997768444">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="359495473498634" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="830956630531339" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-28" name="Set canvas size" sid="578494129031544" type="System">
+                    <param id="0" name="Width">CONST_WINDOW_SIZE_GALAGA</param>
+                    <param id="1" name="Height">CONST_WINDOW_SIZE_GALAGA</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="834107582093824">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="187390316852758" type="GalagaMovingEnemys" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="342218680662852" type="GalagaMovingEnemys" />
+            </actions>
+        </event-block>
+        <event-block sid="640770290747282">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="826730305794222" type="System">
+                    <param id="0" name="Interval (seconds)">movingEnemysSpawnGalaga</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="736957901317031" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="105052014309617" type="Function">
+                    <param id="0" name="Name">&quot;MovingEnemysSpawn&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="116731806633348">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="604324645114053" type="System">
+                    <param id="0" name="Interval (seconds)">middleEnemysMovementGalaga</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="966830111297493" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="499330404538614" type="Function">
+                    <param id="0" name="Name">&quot;MiddleEnemysMovement&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="344591275147122">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="940115904185449" type="GalagaMovingEnemys">
+                    <param id="0" name="Object">GalagaRotationBlock</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="430746047562602" type="GalagaMovingEnemys">
+                    <param id="0" name="Instance variable">rotation</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="641536834845366" type="Function">
+                    <param id="0" name="Name">&quot;MovingEnemyRotation&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="540991606964531">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="802043171599129" type="GalagaPlayer">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="525921553910566" type="GalagaPlayer" />
+                <action id="0" name="Call function" sid="604721879343927" type="Function">
+                    <param id="0" name="Name">&quot;WhoWonGalaga&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-9" name="Set value" sid="854032071536046" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="765326641104957">
+            <conditions>
+                <condition id="-18" name="On created" sid="763678785985662" type="GalagaBullet" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="813073342241961">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="939498918314594" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaEnemys</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="363536842228030" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaMovingEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="733630466729622" type="GalagaBullet">
+                            <param id="0" name="Instance variable">shooter</param>
+                            <param id="1" name="Value">&quot;Enemys&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="641894060715799">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="315921148554449" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="222676233999764">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="548153745532384" type="GalagaBullet">
+                                    <param id="0" name="Object">GalagaPlayer</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="505181381836938">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="610577446693618" type="GalagaPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="529156427662521" type="GalagaBullet">
+                                            <param id="0" name="Instance variable">shooter</param>
+                                            <param id="1" name="Value">&quot;PlayerOne&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="230801931076587">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="162492305436923" type="GalagaPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="873885849368794" type="GalagaBullet">
+                                            <param id="0" name="Instance variable">shooter</param>
+                                            <param id="1" name="Value">&quot;PlayerTwo&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="364658145561830">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="237207454910623" type="GalagaBullet">
+                    <param id="0" name="Instance variable">shooter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Enemys&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="520639692686845">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="919308238535386" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="301603640232595" type="GalagaBullet" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="489518746923800">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="753237752328352" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="574778326854189" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="953379173723558">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="221188433323001" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="167324279300367" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="595860566338972">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="510504673664094" type="GalagaBullet">
+                    <param id="0" name="Instance variable">shooter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;PlayerOne&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="227684401702009">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="299424312392442" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="769641251118860">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="932462045275956" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="311452784932863" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="756786516554728" type="GalagaBullet" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="965846867897622">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="958155042257991" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaMovingEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="368836794656909" type="GalagaBullet" />
+                        <action id="-9" name="Destroy" sid="242395015457128" type="GalagaMovingEnemys" />
+                    </actions>
+                </event-block>
+                <event-block sid="548895431832185">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="250387359021265" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="594801000645447" type="GalagaBullet" />
+                        <action id="-9" name="Destroy" sid="386496984235437" type="GalagaEnemys" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="577888701851369">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="774437545856455" type="GalagaBullet">
+                    <param id="0" name="Instance variable">shooter</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;PlayerTwo&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="318596121249907">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="148678633163680" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaPlayer</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="989884378311438">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="683366689561372" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="784833819416778" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="630378765815837" type="GalagaBullet" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="413154925122874">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="932034399315632" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaMovingEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="844929685885972" type="GalagaBullet" />
+                        <action id="-9" name="Destroy" sid="516741591613658" type="GalagaMovingEnemys" />
+                    </actions>
+                </event-block>
+                <event-block sid="110868520055693">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="284889324692482" type="GalagaBullet">
+                            <param id="0" name="Object">GalagaEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="132741047609419" type="GalagaBullet" />
+                        <action id="-9" name="Destroy" sid="864189025135291" type="GalagaEnemys" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

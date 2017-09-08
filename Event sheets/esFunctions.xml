@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esFunctions</name>
+    <events>
+        <comment>Galaga&apos;s Functions</comment>
+        <event-block sid="510850760794995">
+            <conditions>
+                <condition id="0" name="On function" sid="226596027921493" type="Function">
+                    <param id="0" name="Name">&quot;MiddleEnemysMovement&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="1" name="CONST_X_RIGHT_LIMIT" sid="952251593602076" static="0" type="number">344</variable>
+                <variable constant="1" name="CONST_X_LEFT_LIMIT" sid="223012105002311" static="0" type="number">16</variable>
+                <comment>NEVER TURNOFF the static check box of EnemyJumzSize!</comment>
+                <variable constant="0" name="enemyJumpSize" sid="305004177782966" static="1" type="number">8</variable>
+                <event-block any="1" sid="704190057140141">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="647640366403223" type="GalagaEnemys">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">CONST_X_RIGHT_LIMIT</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="289108510385154" type="GalagaEnemys">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="X co-ordinate">CONST_X_LEFT_LIMIT</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="502059993676164" type="System">
+                            <param id="0" name="Variable">enemyJumpSize</param>
+                            <param id="1" name="Value">enemyJumpSize * (-1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="179723258675925">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="764360688267895" type="System">
+                            <param id="0" name="Object">GalagaEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="904379115875423" type="GalagaEnemys">
+                            <param id="0" name="X">GalagaEnemys.X +  enemyJumpSize</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="344551048058083">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="255644254446759" type="System">
+                                    <param id="0" name="First value">int (random(randomEnemyShootingGalaga))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="951343869083453">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="246654334832190" type="GalagaEnemys">
+                                            <param id="0" name="Instance variable">shooting</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="232127788281872" type="System">
+                                            <param id="0" name="Object to create">GalagaBullet</param>
+                                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                            <param id="2" name="X">GalagaEnemys.X</param>
+                                            <param id="3" name="Y">GalagaEnemys.Y</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="325605770088088" type="GalagaBullet">
+                                            <param id="0" name="Speed">middleEnemysBulletSpeedGalaga</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="904577968876189" type="GalagaBullet">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="142325139340716">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="254067979688688" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="762746973069621" type="System">
+                                            <param id="0" name="Object to create">GalagaBullet</param>
+                                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                            <param id="2" name="X">GalagaEnemys.X</param>
+                                            <param id="3" name="Y">GalagaEnemys.Y</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="927213346781994" type="GalagaBullet">
+                                            <param id="0" name="Speed">middleEnemysBulletSpeedGalaga</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="312159099601249" type="GalagaBullet">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="634176326482393">
+            <conditions>
+                <condition id="0" name="On function" sid="814892122687956" type="Function">
+                    <param id="0" name="Name">&quot;MovingEnemysSpawn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="rightMovingEnemys" sid="741808984751016" static="0" type="number">350</variable>
+                <variable constant="0" name="leftMovingEnemys" sid="143145767315968" static="0" type="number">0</variable>
+                <variable constant="0" name="xSpace" sid="116765320203752" static="0" type="number">20</variable>
+                <variable constant="1" name="CONST_Y_LEFT" sid="172050151643884" static="0" type="number">265</variable>
+                <variable constant="1" name="CONST_Y_RIGHT" sid="374448815827619" static="0" type="number">80</variable>
+                <event-block sid="434458144555375">
+                    <conditions>
+                        <condition id="-10" name="For" sid="648612610331184" type="System">
+                            <param id="0" name="Name">&quot;MovingEnemys&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="551952563921052" type="System">
+                            <param id="0" name="Object to create">GalagaMovingEnemys</param>
+                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                            <param id="2" name="X">xSpace * loopindex(&quot;MovingEnemys&quot;)</param>
+                            <param id="3" name="Y">CONST_Y_LEFT</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="584409968371386" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">shooting</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="649542339245210" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">angleOfMotion</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="559024419323664" type="GalagaMovingEnemys">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="938864371169728" type="System">
+                            <param id="0" name="Object to create">GalagaMovingEnemys</param>
+                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                            <param id="2" name="X">rightMovingEnemys  - xSpace * (loopindex(&quot;MovingEnemys&quot;)) </param>
+                            <param id="3" name="Y">CONST_Y_Right</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="412108958526728" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">shooting</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="945019613931209" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">angleOfMotion</param>
+                            <param id="1" name="Value">180</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="676946284731992" type="GalagaMovingEnemys">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="799565350107290">
+            <conditions>
+                <condition id="0" name="On function" sid="490592408365787" type="Function">
+                    <param id="0" name="Name">&quot;MovingEnemyRotation&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="533334723325618">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="141601391829115" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">rotation</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="470591497074797" type="GalagaMovingEnemys">
+                            <param id="0" name="Speed">200</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="133908909271633" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="260895464936876" type="GalagaMovingEnemys">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="847336186124653" type="GalagaMovingEnemys">
+                            <param id="0" name="Angle">GalagaMovingEnemys.angleOfMotion</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="205669259406409" type="GalagaMovingEnemys">
+                            <param id="0" name="Instance variable">rotation</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="512680362012647" type="Function">
+                            <param id="0" name="Name">&quot;MovingEnemysShooting&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="872422172313724">
+            <conditions>
+                <condition id="0" name="On function" sid="292304547722957" type="Function">
+                    <param id="0" name="Name">&quot;MovingEnemysShooting&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="649502456606150">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="265383985710025" type="System">
+                            <param id="0" name="Object">GalagaMovingEnemys</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="788009322917778">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="170362222146229" type="System">
+                                    <param id="0" name="First value">int(random(10))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="648052446289957">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="985830874513943" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">shooting</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="752045033401134" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">rotation</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="808803289430973" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">canShoot</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="454379005825109" type="System">
+                                            <param id="0" name="Object to create">GalagaBullet</param>
+                                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                            <param id="2" name="X">GalagaMovingEnemys.X</param>
+                                            <param id="3" name="Y">GalagaMovingEnemys.Y</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="619402897681640" type="GalagaBullet">
+                                            <param id="0" name="Speed">movingEnemysBulletSpeedGalaga</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="473332785936501" type="GalagaBullet">
+                                            <param id="0" name="Angle">90</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="712814137358850" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">canShoot</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="140530660898716">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="436089799333120" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">shooting</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="277291483990337" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">rotation</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="265178595401388" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">canShoot</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="396367078287674" type="System">
+                                            <param id="0" name="Object to create">GalagaBullet</param>
+                                            <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                            <param id="2" name="X">GalagaMovingEnemys.X</param>
+                                            <param id="3" name="Y">GalagaMovingEnemys.Y</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="684536996522479" type="GalagaBullet">
+                                            <param id="0" name="Speed">movingEnemysBulletSpeedGalaga</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="624764830911948" type="GalagaBullet">
+                                            <param id="0" name="Angle">270</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="867466724009828" type="GalagaMovingEnemys">
+                                            <param id="0" name="Instance variable">canShoot</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="820574230606803">
+            <conditions>
+                <condition id="0" name="On function" sid="538437466715650" type="Function">
+                    <param id="0" name="Name">&quot;WhoWonGalaga&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="353308409657440">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="811600800525983" type="GalagaPlayer">
+                            <param id="0" name="Instance variable">player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="963161000606588">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="927623043006353" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="831365420857373" type="GameOver">
+                                    <param id="0" name="Text">&quot;Player 1 is the winner&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="357049164636181" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="282643656012055" type="System">
+                                    <param id="0" name="Variable">miniGameRunning</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="995179789391206">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="645830166290340" type="GalagaPlayer">
+                            <param id="0" name="Instance variable">player</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="801929044982754">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="385591855233964" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="659338229007071" type="GameOver">
+                                    <param id="0" name="Text">&quot;Player 2 is the winner&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="973120575730331" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="516652127384052" type="System">
+                                    <param id="0" name="Variable">miniGameRunning</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>/////////////////////////////////////////////////////////////////////////////////////////////</comment>
+        <comment>Frogger&apos;s Functions </comment>
+        <event-block sid="275258455415599">
+            <conditions>
+                <condition id="0" name="On function" sid="536223461193762" type="Function">
+                    <param id="0" name="Name">&quot;EndZoneFrogger&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="457871706048858">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="215906297210003" type="FroggerPlayer">
+                            <param id="0" name="Object">FroggerEnd</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>To fix </comment>
+                        <event-block disabled="1" sid="121235822693138">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="828698009513209" type="FroggerPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="160415370501756" type="FroggerPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="553759659674334" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="542142237511672" type="System" />
+                            </actions>
+                        </event-block>
+                        <comment>/////////////////</comment>
+                        <event-block sid="642065572342844">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="458284968448922" type="FroggerPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="645609900354801" type="GameOver">
+                                    <param id="0" name="Text">&quot;Player 1 is the winner&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="395784269238116" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="755354925297935" type="System">
+                                    <param id="0" name="Variable">miniGameRunning</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="146726124227266">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="849335098168823" type="FroggerPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="781371645239807" type="GameOver">
+                                    <param id="0" name="Text">&quot;Player 2 is the winner&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="569938211124504" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="759422718198962" type="System">
+                                    <param id="0" name="Variable">miniGameRunning</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="663438320313697">
+            <conditions>
+                <condition id="0" name="On function" sid="415422577404176" type="Function">
+                    <param id="0" name="Name">&quot;FroggerMovingObjects&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="298796398822928">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="911770979813693" type="FroggerCars">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="925662294548581" type="FroggerCars">
+                            <param id="0" name="Speed">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="596554709268253">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="760334450231891" type="FroggerCars">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="200385630522190" type="FroggerCars">
+                            <param id="0" name="Speed">Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="866725553584991">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="289903952081070" type="FroggerCars">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="582398383992045" type="FroggerCars">
+                            <param id="0" name="Speed">Function.Param(2)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="984717366367660">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="521777221287050" type="FroggerCars">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="344404730294354" type="FroggerCars">
+                            <param id="0" name="Speed">Function.Param(3)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="860506435191719">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="182183578439031" type="FroggerCars">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="413601321645251" type="FroggerCars">
+                            <param id="0" name="Speed">Function.Param(4)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="509994623475817">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="349715331038687" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="187476454223129" type="FroggerTrunk">
+                            <param id="0" name="Speed">Function.Param(5)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="563585226460901" type="FroggerTrunk">
+                            <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="731886663895725" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">Function.Param(5)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="683295411548136">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="692208114233139" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="473783952999190" type="FroggerTrunk">
+                            <param id="0" name="Speed">Function.Param(6)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="646812307360714" type="FroggerTrunk">
+                            <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="367003537859202" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">Function.Param(6)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="906616606895965">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="617809838171700" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="477967387732625" type="FroggerTrunk">
+                            <param id="0" name="Speed">Function.Param(7)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="638988208229714" type="FroggerTrunk">
+                            <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="481424906465634" type="FroggerTrunk">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">Function.Param(7)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="640848154879897">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="296784392634220" type="FroggerLotus">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="975613271998917" type="FroggerLotus">
+                            <param id="0" name="Speed">Function.Param(8)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="849004256182836" type="FroggerLotus">
+                            <param id="0" name="Angle">FroggerLotus.angleOfMotion</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="525404748051984" type="FroggerLotus">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">Function.Param(8)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="333433306487928">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="832133914429434" type="FroggerLotus">
+                            <param id="0" name="Instance variable">line</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="218171397569811" type="FroggerLotus">
+                            <param id="0" name="Speed">Function.Param(9)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="276969046409028" type="FroggerLotus">
+                            <param id="0" name="Angle">FroggerLotus.angleOfMotion</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="111598491675610" type="FroggerLotus">
+                            <param id="0" name="Instance variable">speed</param>
+                            <param id="1" name="Value">Function.Param(9)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="403594744880584">
+            <conditions>
+                <condition id="0" name="On function" sid="598093618418057" type="Function">
+                    <param id="0" name="Name">&quot;FroggerSpeed&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="536406908577700">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="459061017091631" type="FroggerPlayer">
+                            <param id="0" name="Object">FroggerTrunk</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="763901200077512">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="769365035050669" type="FroggerTrunk">
+                                    <param id="0" name="Instance variable">line</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="415603689477561" type="FroggerPlayer">
+                                    <param id="0" name="Speed">FroggerTrunk.speed</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="329517486177237" type="FroggerPlayer">
+                                    <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="206336297458903">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="545543325175095" type="FroggerTrunk">
+                                    <param id="0" name="Instance variable">line</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="886371707477969" type="FroggerPlayer">
+                                    <param id="0" name="Speed">FroggerTrunk.speed</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="817644015414890" type="FroggerPlayer">
+                                    <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="835470392191390">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="575915970681763" type="FroggerTrunk">
+                                    <param id="0" name="Instance variable">line</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="523457952500802" type="FroggerPlayer">
+                                    <param id="0" name="Speed">FroggerTrunk.speed</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="850520853688951" type="FroggerPlayer">
+                                    <param id="0" name="Angle">FroggerTrunk.angleOfMotion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="143000666893851">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="995444775255660" type="FroggerPlayer">
+                            <param id="0" name="Object">FroggerLotus</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="166964218118528">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="647272944879619" type="FroggerLotus">
+                                    <param id="0" name="Instance variable">line</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="594253400754945" type="FroggerPlayer">
+                                    <param id="0" name="Speed">FroggerLotus.speed</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="521668976087003" type="FroggerPlayer">
+                                    <param id="0" name="Angle">FroggerLotus.angleOfMotion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="364372149168603">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="866099184886235" type="FroggerLotus">
+                                    <param id="0" name="Instance variable">line</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="177884885252107" type="FroggerPlayer">
+                                    <param id="0" name="Speed">FroggerLotus.speed</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="201402154000702" type="FroggerPlayer">
+                                    <param id="0" name="Angle">FroggerLotus.angleOfMotion</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="669916967627103">
+            <conditions>
+                <condition id="0" name="On function" sid="929931178531318" type="Function">
+                    <param id="0" name="Name">&quot;LotusUnderwater&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="isUnderwater" sid="820540088869239" static="1" type="number">1</variable>
+                <event-block sid="924529303952927">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="573963298927238" type="FroggerLotus">
+                            <param id="0" name="Animation">&quot;GoUpWater&quot;</param>
+                        </condition>
+                        <condition id="3" name="Compare frame" sid="305459418879540" type="FroggerLotus">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Number">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="580332687176855" type="FroggerLotus">
+                            <param id="0" name="Animation">&quot;Movement&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="359125263381476">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="180518420255064" type="System">
+                            <param id="0" name="Variable">isUnderwater</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="393360055306285" type="FroggerLotus">
+                            <param id="0" name="Instance variable">goDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="956824987641214" type="FroggerLotus">
+                            <param id="0" name="Animation">&quot;UnderWater&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="433566710179863" type="System">
+                            <param id="0" name="Variable">isUnderwater</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="916165049738015" type="System">
+                            <param id="0" name="Variable">lotusUnderWaterTimerFrogger</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="814483605232565" type="System">
+                            <param id="0" name="Seconds">Function.Param(0)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="304685096645579" type="FroggerLotus">
+                            <param id="0" name="Animation">&quot;GoUpWater&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="510499002356864" type="System">
+                            <param id="0" name="Variable">isUnderwater</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="634162087832054" type="FroggerLotus">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="259723539364750" type="System">
+                            <param id="0" name="Variable">lotusUnderWaterTimerFrogger</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>/////////////////////////////////////////////////////////////////////////////////////////////</comment>
+    </events>
+</c2eventsheet>

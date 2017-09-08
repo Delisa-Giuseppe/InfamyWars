@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esGalagaControllers</name>
+    <events>
+        <event-group description="" sid="618811706856309" title="PlayerOne">
+            <sub-events>
+                <event-block sid="406626091441554">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="883399519707929" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">14</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="604267422129162">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="684411299393207" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="719302513993935" type="GalagaPlayer">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="320492726020410" type="GalagaPlayer">
+                                    <param id="0" name="Max Speed">playerSpeedGalaga</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="816965935921707">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="120342415220700" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="547953817327823">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="600399784796221" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="552911126015255" type="GalagaPlayer">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="744395548939096" type="GalagaPlayer">
+                                    <param id="0" name="Max Speed">playerSpeedGalaga</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="991052800933496">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="672195542667226" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="745730700654545">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="549422264776201" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="263154034222736" type="System">
+                                    <param id="0" name="Object to create">GalagaBullet</param>
+                                    <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                    <param id="2" name="X">GalagaPlayer.X</param>
+                                    <param id="3" name="Y">GalagaPlayer.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="792776657955423" type="GalagaBullet">
+                                    <param id="0" name="Speed">CONST_PLAYER_BULLET_SPEED_GALAGA</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="555660285276112" type="GalagaBullet">
+                                    <param id="0" name="Angle">270</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="836142370498717" title="PlayerTwo">
+            <sub-events>
+                <event-block sid="971429880555716">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="813660732136992" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">14</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="341614432497377">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="863208877317888" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="972663719644255" type="GalagaPlayer">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="780173857869665" type="GalagaPlayer">
+                                    <param id="0" name="Max Speed">playerSpeedGalaga</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="205858334118692">
+                    <conditions>
+                        <condition id="3" name="Is button down" sid="159076398304523" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">11</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="989673467932173">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="751312973388954" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="362978255555165" type="GalagaPlayer">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="738881657561921" type="GalagaPlayer">
+                                    <param id="0" name="Max Speed">playerSpeedGalaga</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="528968671552930">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="261669829271512" type="Gamepad">
+                            <param id="0" name="Gamepad">1</param>
+                            <param id="1" name="Button">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="718705090403345">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="674363308338239" type="GalagaPlayer">
+                                    <param id="0" name="Instance variable">player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="678030814542054" type="System">
+                                    <param id="0" name="Object to create">GalagaBullet</param>
+                                    <param id="1" name="Layer">&quot;PlayingArea&quot;</param>
+                                    <param id="2" name="X">GalagaPlayer.X</param>
+                                    <param id="3" name="Y">GalagaPlayer.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="704318000347843" type="GalagaBullet">
+                                    <param id="0" name="Speed">CONST_PLAYER_BULLET_SPEED_GALAGA</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="267215736241486" type="GalagaBullet">
+                                    <param id="0" name="Angle">90</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

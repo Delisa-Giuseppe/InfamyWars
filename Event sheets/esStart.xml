@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esStart</name>
+    <events>
+        <event-block sid="645755361754103">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="834052513946867" type="System" />
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="812640183592403" type="System">
+                    <param id="0" name="Width">CONST_CANVAS_X</param>
+                    <param id="1" name="Height">CONST_CANVAS_Y</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="281566336682890" type="Circe">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;CrystalBall&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="337571421282407" type="Circe">
+                    <param id="0" name="Animation">&quot;Idle_Fly&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="162766691488752" type="Audio">
+                    <param id="0" name="Audio file">Music1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;StartMusic&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="PlayerID" sid="341183827066426" static="0" type="number">0</variable>
+                <event-block sid="867613944582234">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="356937973179298" type="System">
+                            <param id="0" name="Object">PlayerNumberImage</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="803824031507732" type="PlayerNumberImage">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Value">PlayerID</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="813262497821795" type="System">
+                            <param id="0" name="Variable">PlayerID</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="198983141273153">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="691397555075653" type="PlayerNumberImage">
+                                    <param id="0" name="Instance variable">Player</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="833636433298432" type="PlayerNumberImage">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="677641704584801">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="265845366989169" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="829923420989889" type="System">
+                    <param id="0" name="Layout">Tutorial</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="348548469200264">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="786491727131318" type="Gamepad">
+                    <param id="0" name="Gamepad">1</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="889999129515224" type="System">
+                    <param id="0" name="Layout">Tutorial</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

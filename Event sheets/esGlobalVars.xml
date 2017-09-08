@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esGlobalVars</name>
+    <events>
+        <variable constant="0" name="stopSpawn" sid="386744147281127" static="0" type="number">0</variable>
+        <variable constant="0" name="circeAnimation" sid="950435585312224" static="0" type="number">0</variable>
+        <variable constant="0" name="SkeletronSpawn" sid="974113638309904" static="0" type="number">1</variable>
+        <variable constant="0" name="GoBack" sid="807301816865080" static="0" type="number">0</variable>
+        <variable constant="0" name="CameraGO" sid="396796660095632" static="0" type="number">1</variable>
+        <variable constant="0" name="randomRangeX2" sid="893568837187162" static="0" type="number">0</variable>
+        <variable constant="0" name="wormBullet" sid="267888016325876" static="0" type="number">0</variable>
+        <variable constant="0" name="fireRangeX" sid="306783993575315" static="0" type="number">0</variable>
+        <variable constant="0" name="randomRangeX" sid="397541185513559" static="0" type="number">0</variable>
+        <comment>CameraGlobalVariable</comment>
+        <variable constant="0" name="p1x" sid="364213289792723" static="0" type="number">0</variable>
+        <variable constant="0" name="p2x" sid="984191973550098" static="0" type="number">0</variable>
+        <variable constant="0" name="p1y" sid="437603849320418" static="0" type="number">0</variable>
+        <variable constant="0" name="p2y" sid="580570299347521" static="0" type="number">0</variable>
+        <variable constant="0" name="distanceP1P2" sid="504189302752212" static="0" type="number">0</variable>
+        <comment>&#x0D;&#x0A;GeneralGlobalVariables&#x0D;&#x0A;</comment>
+        <variable constant="0" name="PlayerTwoMoney" sid="881153810815802" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerOneMoney" sid="992447676814620" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerOneScore" sid="912304651317237" static="0" type="number">0</variable>
+        <variable constant="0" name="PlayerTwoScore" sid="156901796550470" static="0" type="number">0</variable>
+        <variable constant="1" name="CONST_CANVAS_X" sid="820043289244301" static="0" type="number">720</variable>
+        <variable constant="1" name="CONST_CANVAS_Y" sid="730781640150632" static="0" type="number">480</variable>
+        <variable constant="1" name="CROUCH_ACCELERATION" sid="416081461958920" static="0" type="number">50</variable>
+        <variable constant="1" name="MIN_SELECTABLE_PLAYER" sid="146850369385356" static="0" type="number">0</variable>
+        <variable constant="0" name="MAX_SELECTABLE_PLAYER" sid="938227721507422" static="0" type="number">0</variable>
+        <variable constant="0" name="Pad1Counter" sid="584121744864273" static="0" type="number">0</variable>
+        <variable constant="0" name="Pad2Counter" sid="989100587084861" static="0" type="number">0</variable>
+        <variable constant="0" name="Player1Selection" sid="187891437092205" static="0" type="text">Magician</variable>
+        <variable constant="0" name="Player2Selection" sid="383936018834922" static="0" type="text">Witch</variable>
+        <variable constant="0" name="PlayerCount" sid="647892515117444" static="0" type="number">2</variable>
+        <variable constant="0" name="Player1_GameOver" sid="996336957528445" static="0" type="number">0</variable>
+        <variable constant="0" name="Player2_GameOver" sid="237156916837097" static="0" type="number">0</variable>
+        <variable constant="0" name="Paused" sid="387703745415506" static="0" type="number">0</variable>
+        <variable constant="0" name="Counter" sid="509394105866714" static="0" type="number">0</variable>
+        <comment>&#x0D;&#x0A;MiniGameRunningVariable&#x0D;&#x0A;</comment>
+        <variable constant="0" name="miniGameRunning" sid="410108388648889" static="0" type="number">0</variable>
+        <comment>&#x0D;&#x0A;GalagaGlobalVariables &#x0D;&#x0A;</comment>
+        <variable constant="1" name="CONST_WINDOW_SIZE_GALAGA" sid="162327207776672" static="0" type="number">360</variable>
+        <variable constant="1" name="CONST_PLAYER_BULLET_SPEED_GALAGA" sid="183940014266046" static="0" type="number">300</variable>
+        <variable constant="0" name="movingEnemysBulletSpeedGalaga" sid="509174587194600" static="0" type="number">200</variable>
+        <variable constant="0" name="middleEnemysBulletSpeedGalaga" sid="162862699627643" static="0" type="number">200</variable>
+        <variable constant="0" name="middleEnemysMovementGalaga" sid="131515504852311" static="0" type="number">1</variable>
+        <variable constant="0" name="movingEnemysSpawnGalaga" sid="723837401182570" static="0" type="number">5</variable>
+        <comment>Decrease the variable to increment the % of bullets spawn. Don&apos;t set the variable &lt;= then 1</comment>
+        <variable constant="0" name="randomEnemyShootingGalaga" sid="307481730623854" static="0" type="number">10</variable>
+        <variable constant="0" name="valueXAxisGalaga" sid="992707836775501" static="0" type="number">1</variable>
+        <variable constant="0" name="playerSpeedGalaga" sid="210807905927874" static="0" type="number">300</variable>
+        <comment>&#x0D;&#x0A;FroggerGlobalVariables&#x0D;&#x0A;</comment>
+        <variable constant="0" name="CONST_WINDOW_SIZE_FROGGER" sid="896601237273003" static="0" type="number">416</variable>
+        <variable constant="1" name="CONST_FROGGER_JUMP_SIZE" sid="739542708370290" static="0" type="number">32</variable>
+        <comment>Don&apos;t change the value of &quot;valueYAxisFrogger</comment>
+        <variable constant="1" name="CONST_VALUE_X_AXIS_FROGGER" sid="717886108540989" static="0" type="number">90</variable>
+        <variable constant="1" name="CONST_VALUE_Y_AXIS_FROGGER" sid="713697072426982" static="0" type="number">80</variable>
+        <variable constant="0" name="carSpeedFrogger" sid="119504295378985" static="0" type="number">50</variable>
+        <variable constant="0" name="trunkSpeedFrogger" sid="292240526488954" static="0" type="number">70</variable>
+        <variable constant="0" name="lotusSpeedFrogger" sid="563001293136045" static="0" type="number">100</variable>
+        <variable constant="0" name="lotusWait" sid="441052696546891" static="0" type="number">3</variable>
+        <variable constant="0" name="lotusUnderWaterTimerFrogger" sid="754548150638162" static="0" type="number">0</variable>
+        <comment>&#x0D;&#x0A;IAGlobalVariables&#x0D;&#x0A;</comment>
+        <variable constant="1" name="CONST_BONE_COOLDOWN" sid="824718135613292" static="0" type="number">2</variable>
+        <variable constant="1" name="CONST_ARMS_COOLDOWN" sid="774056659252649" static="0" type="number">1</variable>
+        <variable constant="1" name="CONST_SLIME_BULLET_COOLDOWN" sid="651362006917219" static="0" type="number">1</variable>
+        <variable constant="0" name="meleeSkeletronDistance" sid="760697297267431" static="0" type="number">150</variable>
+        <variable constant="0" name="tankSkeletronDistance" sid="621707655395518" static="0" type="number">80</variable>
+        <variable constant="0" name="rangedSkeletronDistance" sid="611888315858805" static="0" type="number">200</variable>
+        <variable constant="0" name="meleeSkeletronStopTimer" sid="745481302527868" static="0" type="number">1.5</variable>
+        <variable constant="0" name="slimeBossStopTimer" sid="352527604624254" static="0" type="number">0.5</variable>
+        <variable constant="0" name="skeletronSpeed" sid="826920846544754" static="0" type="number">170</variable>
+        <variable constant="0" name="slimeBossSpeed" sid="772885059181269" static="0" type="number">180</variable>
+        <comment>&#x0D;&#x0A;Bosses Global Var&#x0D;&#x0A;</comment>
+        <variable constant="0" name="abortoTriggerTimer" sid="133454806258760" static="0" type="number">1</variable>
+        <variable constant="0" name="abortoHealth" sid="553767236584761" static="0" type="number">0</variable>
+    </events>
+</c2eventsheet>

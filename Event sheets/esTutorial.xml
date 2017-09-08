@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esTutorial</name>
+    <events>
+        <event-block sid="446362209027777">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="456842897712739" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Timer" id="0" name="Start timer" sid="311023118570831" type="playertutorial">
+                    <param id="0" name="Duration">4</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;jump&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="330246515835706" type="Texttutorial">
+                    <param id="0" name="Text">&quot;TUTORIAL&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="702822907481377">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="886196688485314" type="playertutorial">
+                    <param id="0" name="Tag">&quot;jump&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="947238979415366" type="playertutorial">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="194910660069195" type="playertutorial">
+                    <param id="0" name="Duration">1</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;left&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="927178639295179" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Set text" sid="499403395835426" type="Texttutorial">
+                    <param id="0" name="Text">&quot;Press A to JUMP&#x0D;&#x0A;Press D-Pad to MOVE and AIM&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="680663927211003">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="499252002958921" type="playertutorial">
+                    <param id="0" name="Tag">&quot;left&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="978998946873110" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="646125638109589">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="513519455115337" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="728582257544847" type="playertutorial">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="592213704725315" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="623014416782275" type="playertutorial">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="412185810660155" type="System">
+                    <param id="0" name="Seconds">0.7</param>
+                </action>
+                <action id="-10" name="Set value" sid="696030367790916" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="768793611478841" type="playertutorial">
+                    <param id="0" name="Duration">1</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;right&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="206326823310914" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="609356290642562">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="436134166823891" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="221420194854367" type="playertutorial">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="704027770300789" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="143236833912918" type="playertutorial">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="392693612828573" type="System">
+                    <param id="0" name="Seconds">0.7</param>
+                </action>
+                <action id="-10" name="Set value" sid="238340720833267" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="104904391910058" type="playertutorial">
+                    <param id="0" name="Duration">2</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;shoot&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="884660896947522" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="580709200998778">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="772834197096403" type="playertutorial">
+                    <param id="0" name="Tag">&quot;right&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="665150892217341" type="playertutorial">
+                    <param id="0" name="Instance variable">tutorial</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="278024787188581">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="655172534679385" type="playertutorial">
+                    <param id="0" name="Tag">&quot;shoot2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="209385408539264" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_fire&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="410713901774916" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="876231218523333" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="307061160037919">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="931103315778508" type="playertutorial">
+                    <param id="0" name="Tag">&quot;shoot&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="379550947107584" type="Texttutorial">
+                    <param id="0" name="Text">&quot;Press X to Fire&#x0D;&#x0A;Press Y to Fire -Infame Dagger-&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="728668859498637" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_fire&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="680977045584255" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="788271632202760" type="playertutorial">
+                    <param id="0" name="Animation">&quot;Magician_stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Timer" id="0" name="Start timer" sid="846581530437855" type="playertutorial">
+                    <param id="0" name="Duration">2</param>
+                    <param id="1" name="Type">0</param>
+                    <param id="2" name="Tag">&quot;shoot2&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="662891355400325">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="700540524253598" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="691925110012612" type="System">
+                    <param id="0" name="Layout">Level1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="310356946590689">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="821931176946191" type="Gamepad">
+                    <param id="0" name="Gamepad">1</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="446666008244225" type="System">
+                    <param id="0" name="Layout">Level1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

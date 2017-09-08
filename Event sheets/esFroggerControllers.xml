@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>esFroggerControllers</name>
+    <events>
+        <event-block sid="768830888973185">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="411633193891300" type="System">
+                    <param id="0" name="Variable">miniGameRunning</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-group description="" sid="776769896991108" title="Player One">
+                    <sub-events>
+                        <event-block any="1" sid="199648355210950">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="291129067190442" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">14</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="189031099926125">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="778880595775109" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="335573355326861" type="FroggerPlayer">
+                                            <param id="0" name="X">FroggerPlayer.X -CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="353123971521540" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="288662194406576">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="433869334353719" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">15</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="653719203788831">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="996883624402849" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="366770037548273" type="FroggerPlayer">
+                                            <param id="0" name="X">FroggerPlayer.X + CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="186292018785441" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="642897734942489">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="332261650118891" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">13</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="487876074567698">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="941393706600690" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="625319391736605" type="FroggerPlayer">
+                                            <param id="0" name="Y">FroggerPlayer.Y + CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="667258317098207" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="177776824822649">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="791002370715827" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">12</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="124736634585370">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="631084480045854" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="750857543089006" type="FroggerPlayer">
+                                            <param id="0" name="Y">FroggerPlayer.Y -CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="299422034221421" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="443761202642497" title="Player Two">
+                    <sub-events>
+                        <event-block sid="421354710885896">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="352423941542074" type="Gamepad">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">14</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="387515876159790">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="352550095129527" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="190309960699248" type="FroggerPlayer">
+                                            <param id="0" name="X">FroggerPlayer.X -CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="319502647169779" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="126450846306882">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="768301589239938" type="Gamepad">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">15</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="556423211510773">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="108823886449025" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-1" name="Set X" sid="365258416857570" type="FroggerPlayer">
+                                            <param id="0" name="X">FroggerPlayer.X + CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="375045827503033" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="598219121275050">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="300098075132638" type="Gamepad">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">13</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="582682085387826">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="445577306733663" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="369387647917649" type="FroggerPlayer">
+                                            <param id="0" name="Y">FroggerPlayer.Y + CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="696768822991138" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">6</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="136207437218802">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="728554246017131" type="Gamepad">
+                                    <param id="0" name="Gamepad">1</param>
+                                    <param id="1" name="Button">12</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="217721881741567">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="782131523133412" type="FroggerPlayer">
+                                            <param id="0" name="Instance variable">player</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-2" name="Set Y" sid="361551206290717" type="FroggerPlayer">
+                                            <param id="0" name="Y">FroggerPlayer.Y -CONST_FROGGER_JUMP_SIZE</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="647268657836875" type="FroggerPlayer">
+                                            <param id="0" name="Frame number">4</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
